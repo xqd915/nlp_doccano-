@@ -46,7 +46,7 @@ class SignupView(TemplateView):
             email = EmailMessage(
                 mail_subject, message, to=[to_email]
             )
-            email.send()
+            # email.send()
             return render(request, 'validate_mail_address_complete.html')
         else:
             return render(request, self.template_name, {'form': form, 'allow_signup': bool(settings.ALLOW_SIGNUP)})
